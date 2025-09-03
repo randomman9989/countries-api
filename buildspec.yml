@@ -1,0 +1,22 @@
+version: 0.2
+
+env:
+  secrets-manager:
+    SECRET_USERNAME: "docker-login-info-2:username"
+    SECRET_PASSWORD: "docker-login-info-2:password"
+phases:
+  pre_build:
+    commands:
+      - echo "Logging into docker hub"
+      - echo "$SECRET_PASSWORD" | docker login -u $SECRET_USERNAME --password-stdin
+  build:
+    commands:
+      - echo "Building docker image..."
+      - docker build -t nicholaseldergill/countries-api:latest .
+  post_build:
+    commands:
+      - echo "Pushing docker image"
+      - docker push nicholaseldergill/countries-api:latest
+artifacts: 
+  files:
+    - Dockerfile
