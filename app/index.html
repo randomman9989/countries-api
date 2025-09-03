@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Info</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Select a Country</h1>
+    <select id="country-select">
+        <option value="">--Choose a country--</option>
+    </select>
+    <div id="country-info" style="display:none;">
+        <h2 id="country-name"></h2>
+        <img id="country-flag" src="" alt="Country Flag" style="max-width:200px;">
+        <p><strong>Capital:</strong> <span id="country-capital"></span></p>
+        <p><strong>Population:</strong> <span id="country-population"></span></p>
+        <p><strong>Languages:</strong> <span id="country-languages"></span></p>
+        <p><strong>Fun Fact:</strong> <span id="country-funfact"></span></p>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
